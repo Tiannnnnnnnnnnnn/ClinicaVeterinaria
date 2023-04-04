@@ -4,3 +4,13 @@ class Especialista:
         self.experiencia = experiencia
         self.especialidad = especialidad
         self.contacto = contacto
+
+    def __str__(self):
+        return """
+        Especialista: {self.nombre}
+        Años de experiencia: {self.experiencia}
+        Especialidad: {self.especialidad}
+        Contacto: {self.contacto}"""
+
+
+

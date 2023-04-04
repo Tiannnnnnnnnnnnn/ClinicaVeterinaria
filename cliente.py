@@ -84,3 +84,15 @@ class Cliente:
 
     def set_historial(self, historial):
         self._historial = historial
+
+    def __str__(self):
+        return """
+        Nombre: {self.nombres} {self.apellido_materno} {self.apellido_paterno}
+        Genero: {self.genero}
+        Fecha nacimiento: {self.fecha_nacimiento}
+        Rut: {self.rut}
+        Contacto: {self.email} {self.domicilio} {self.telefono}
+        Mascotas: {self.mascotas}
+        Historial: {self.historial}
+        """
+        
