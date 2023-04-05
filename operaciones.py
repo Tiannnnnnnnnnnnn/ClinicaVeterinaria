@@ -1,4 +1,4 @@
-#from AtencionCliente import AgendarHora
+from AtencionCliente import AgendarHora
 import csv
  
 class Operaciones:
@@ -9,7 +9,7 @@ class Operaciones:
     
     def reservarQuirofano():
         salas = input("Ingrese sala para reservar: ")
-        personal_requerido = int(input("¿Cuanto personal requiere?"))
+        personal_requerido = int(input("¿Cuanto personal requiere?: "))
 
         reserva = [personal_requerido, salas]
 
@@ -26,16 +26,17 @@ class Operaciones:
                 print(f"Cantidad de personal: {reserva[0]}, Sala: {reserva[1]}")
 
     
-while True:
-    print("1. Hacer una reserva")
-    print("2. Ver reservas")
-    print("3. Salir")
-    opcion = input("Seleccione una opción: ")
-    if opcion == "1":
-        Operaciones.reservarQuirofano()
-    elif opcion == "2":
-        Operaciones.verReservas()
-    elif opcion == "3":
-        break
-    else:
-        print("Opción inválida. Intente nuevamente.")
+    def mostrarMenu():
+
+        print("1. Hacer una reserva")
+        print("2. Ver reservas")
+        print("3. Salir")
+        opcion = input("Seleccione una opción: ")
+        if opcion == "1":
+            Operaciones.reservarQuirofano()
+        elif opcion == "2":
+            Operaciones.verReservas()
+        elif opcion == "3":
+            break
+        else:
+            print("Opción inválida. Intente nuevamente.")
