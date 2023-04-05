@@ -2,28 +2,28 @@
 
 
 
-class AtencionCliente:
-    def __init__(self, urgencias, consultas, operaciones, formato_atencion):
-        self.urgencias = urgencias
-        self.consultas = consultas
-        self.operaciones = operaciones
-        self.formato_atencion = formato_atencion
+class AgendarHora:
+    def __init__(self, veterinario, mascota, tipo_atencion):
+        self.veterinario = veterinario
+        self.mascota = mascota
+        self.tipo_atencion = tipo_atencion
     
-    def escoger(opcion):
-        opcion = input("Que tipo de consulta viene el paciente: ")
+    def reservarHora(tipo_atencion):
         
-        if opcion == "consulta":
+        tipo_atencion = input("Que tipo de consulta viene el paciente: ")
+        
+        if tipo_atencion == "consulta":
             consulta = Consultas()
             consulta.realizar_consulta()
 
 
-        if opcion == "urgencia":
+        if tipo_atencion == "urgencia":
             urgencia = Urgencias()
             urgencia.orden_atencion()
 
-        if opcion == "operacion":
+        if tipo_atencion == "operacion":
             operacion = Operacion()
-            operacion = reservar_hora()
+            operacion = reservarQuirofano()
 
         
 
