@@ -1,13 +1,8 @@
-from AtencionCliente import AgendarHora
 import csv
  
 class Operaciones:
     
-    def __init__(self, personal_requerido, salas):
-        self.personal_requerido = personal_requerido
-        self.salas = salas
-    
-    def reservarQuirofano():
+    def reservarQuirofano(self):
         salas = input("Ingrese sala para reservar: ")
         personal_requerido = int(input("¿Cuanto personal requiere?: "))
 
@@ -17,26 +12,36 @@ class Operaciones:
             escritor_csv = csv.writer(archivo_csv)
             escritor_csv.writerow(reserva)
     
-    def verReservas():
+    def verReservas(self):
 
         with open('reservasQuirofano.csv', 'r', newline='') as archivo_csv:
             lector_csv = csv.reader(archivo_csv)
             
+            hay_reservas = False
+            
             for reserva in lector_csv:
-                print(f"Cantidad de personal: {reserva[0]}, Sala: {reserva[1]}")
+                if len(reserva) >= 2:
+                    print(f"Cantidad de personal: {reserva[0]}, Sala: {reserva[1]}")
+                    hay_reservas = True
+
+            if hay_reservas == False:
+                print("No hay reservas.")
 
     
-    def mostrarMenu():
+    def mostrarMenuOP(self):
+        
+        while True:
+            
+            print("1. Hacer una reserva")
+            print("2. Ver reservas")
+            print("3. Salir")
+            opcion = input("Seleccione una opción: ")
 
-        print("1. Hacer una reserva")
-        print("2. Ver reservas")
-        print("3. Salir")
-        opcion = input("Seleccione una opción: ")
-        if opcion == "1":
-            Operaciones.reservarQuirofano()
-        elif opcion == "2":
-            Operaciones.verReservas()
-        elif opcion == "3":
-            break
-        else:
-            print("Opción inválida. Intente nuevamente.")
+            if opcion == "1":
+                self.reservarQuirofano()
+            elif opcion == "2":
+                self.verReservas()
+            elif opcion == "3":
+                break
+            else:
+                print("Opción inválida. Intente nuevamente.")

@@ -1,19 +1,18 @@
+from operaciones import Operaciones
+
 
 class AgendarHora:
-    def __init__(self, veterinario, mascota, tipo_atencion):
-        self.veterinario = veterinario
-        self.mascota = mascota
-        self.tipo_atencion = tipo_atencion
     
-    def reservarHora():
+    def reservarHora(self):
         
-        tipo_atencion = input("""Que tipo de consulta viene el paciente:
-        1. Consultas
+        tipo_atencion = input("""
+        Que tipo de consulta viene el paciente:
+        1. Consultas rutinarias
         2. Urgencias
         3. Operaciones
-        Seleccione un numero...   
+        Seleccione un numero...  
         """)
-        
+
         if tipo_atencion == "1":
             consulta = Consultas()
             consulta.realizar_consulta()
@@ -23,20 +22,9 @@ class AgendarHora:
             urgencia.orden_atencion()
 
         if tipo_atencion == "3":
-            operacion = operaciones()
-            operacion.reservarQuirofano()
+            operacion = Operaciones()
+            operacion.mostrarMenuOP()
 
-    def mostrarMenu():
-
-        while True:
-            opcion = input("""¿Quiere agendar una hora? Responda si o no  
-            """)
-            if opcion == "si":
-                AgendarHora.reservarHora()
-            elif opcion == "no":
-                brake
-            else:
-                print("Opción inválida. Intente nuevamente.")
 
 
         
