@@ -1,4 +1,5 @@
 from AtencionCliente import AgendarHora
+from cliente import MenuClientes
 import os #para poder hacer clear
 
 menuAgendarHora = AgendarHora()
@@ -20,6 +21,9 @@ def menu_principal():
 
         if opcion == "1":
             menuAgendarHora.reservarHora()
+        elif opcion == "2":
+            cliente = MenuClientes()
+            cliente.menuCliente()
         else:
             print("Ingrese una opcion valida")
 

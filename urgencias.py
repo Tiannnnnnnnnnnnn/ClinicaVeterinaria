@@ -79,6 +79,7 @@ class Urgencias:
                     print(f"No hay urgencias en ESI {gravedad}.")
                 print()
         a = input("Presione enter para volver...")
+    
     def limpiar_pantalla(self):
         os.system('cls' if os.name == 'nt' else 'clear')
 
